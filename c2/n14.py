@@ -1,6 +1,6 @@
 import os
-
-os.chdir(os.path.dirname(__file__))
+FILE_NAME = "hightemp.txt"
+absolute_path = os.path.join(os.path.dirname(__file__), FILE_NAME)
 
 def head(file_name, N):
     with open(file_name) as f:
@@ -9,4 +9,4 @@ def head(file_name, N):
 
 if __name__ == "__main__":
     N = int(input("N: "))
-    head("hightemp.txt", N)
+    head(absolute_path, N)

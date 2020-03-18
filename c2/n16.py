@@ -1,6 +1,6 @@
 import os
-
-os.chdir(os.path.dirname(__file__))
+FILE_NAME = "hightemp.txt"
+absolute_path = os.path.join(os.path.dirname(__file__), FILE_NAME)
 
 def split(file_name, N):
     file_contents = []
@@ -13,4 +13,4 @@ def split(file_name, N):
 
 if __name__ == "__main__":
     N = int(input("N: "))
-    split("hightemp.txt", N)
+    split(absolute_path, N)
