@@ -4,4 +4,6 @@
 
 ## 環境
 
+- macOS Catalina 10.15.3
 - Python 3.8.0 64-bit
+- zsh 5.7.1 (x86_64-apple-darwin19.0)
