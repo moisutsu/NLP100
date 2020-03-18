@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/ash
 
 cd `dirname $0`
 cut -f 1 -d '	' hightemp.txt > col1sh.txt

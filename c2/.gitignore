@@ -1,3 +1,4 @@
 *.txt
 !hightemp.txt
 split*
+*_history

@@ -1,3 +1,3 @@
-#!/bin/zsh
+#!/bin/ash
 
 cd `dirname $0`
