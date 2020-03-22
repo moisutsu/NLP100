@@ -1,7 +1,7 @@
 from n20 import load_england_text
 import regex
 
-def n25():
+def n26():
     text = load_england_text()
     rec_pattern = r"(?<recursive_brackets>\{\{(?:[^{}]+|(?&recursive_brackets))*\}\})"
     basic_information_result = regex.findall(rec_pattern, text)[1]
@@ -12,4 +12,4 @@ def n25():
     return {elem[0]: elem[1] for elem in results}
 
 if __name__ == "__main__":
-    print(n25())
+    print(*n26().items(), sep="\n")
