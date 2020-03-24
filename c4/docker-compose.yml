@@ -1,0 +1,12 @@
+# docker-compose run app
+version: "3"
+services:
+    app:
+        build: .
+        tty: true
+        volumes:
+            - ./:/work:cached
+        working_dir: /work
+        environment:
+            - HOME=/work
+        command: "/bin/ash"

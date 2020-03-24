@@ -1,6 +1,6 @@
 def n4(sentence, indexs):
     import re
-    pattern = r"[a-zA-Z]+"
+    pattern = r"\w+"
     results = re.findall(pattern, sentence)
     keys = [results[i][0] if i + 1 in indexs else results[i][:2] for i in range(len(results))]
     return {key: value for key, value in zip(keys, list(range(1, len(results) + 1)))}

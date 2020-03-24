@@ -20,7 +20,7 @@ def n29():
     url = API_URL.format(results_dic["国旗画像"])
     response = requests.get(url)
     json_body = response.json()
-    print(FLAG_URL.format(json_body["query"]["normalized"][0]["to"]))
+    return FLAG_URL.format(json_body["query"]["normalized"][0]["to"])
 
 if __name__ == "__main__":
-    n29()
+    print(n29())

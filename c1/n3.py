@@ -1,6 +1,6 @@
 def n3(sentence):
     import re
-    pattern = r"[a-zA-Z]+"
+    pattern = r"\w+"
     results = re.findall(pattern, sentence)
     return [len(x) for x in results]
 

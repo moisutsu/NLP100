@@ -3,7 +3,7 @@ import re
 
 def n22():
     text = load_england_text()
-    pattern = r"^\[\[Category:(.+)\]\]$"
+    pattern = r"^\[\[Category:(.+)]]$"
     return re.findall(pattern, text, re.MULTILINE)
 
 if __name__ == "__main__":

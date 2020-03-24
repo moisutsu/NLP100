@@ -1,6 +1,6 @@
 def n5_word(sequence):
     import re
-    pattern = r"[a-zA-Z]+"
+    pattern = r"\w+"
     results = re.findall(pattern, sequence)
     return bi_gram(results)
 
