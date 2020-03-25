@@ -13,10 +13,13 @@ def n37():
     labels = [line[0] for line in sorted_frequency_of_morphemes]
     means = [line[1] for line in sorted_frequency_of_morphemes]
     fig, ax = plt.subplots()
-    rect = ax.bar(x, means)
+    ax.bar(x, means)
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
-    plt.savefig("img.png")
+    ax.set_title("頻度上位10語")
+    ax.set_xlabel("単語")
+    ax.set_ylabel("出現頻度")
+    fig.savefig("n37.png")
 
 
 if __name__ == "__main__":
