@@ -1,4 +1,4 @@
-def n4(sentence, indexs):
+def element_symbol(sentence, indexs):
     import re
     pattern = r"\w+"
     results = re.findall(pattern, sentence)
@@ -8,4 +8,4 @@ def n4(sentence, indexs):
 if __name__ == "__main__":
     sentence = "Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can."
     indexs = [1, 5, 6, 7, 8, 9, 15, 16, 19]
-    print(n4(sentence, indexs))
+    print(element_symbol(sentence, indexs))

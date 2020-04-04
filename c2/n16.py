@@ -1,6 +1,9 @@
 import os
-FILE_NAME = "hightemp.txt"
-absolute_path = os.path.join(os.path.dirname(__file__), FILE_NAME)
+import sys
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+INPUT_FILE_NAME = "popular-names.txt"
 
 def split(file_name, N):
     file_contents = []
@@ -12,5 +15,4 @@ def split(file_name, N):
             f.write("\n".join(file_content))
 
 if __name__ == "__main__":
-    N = int(input("N: "))
-    split(absolute_path, N)
+    split(INPUT_FILE_NAME, int(sys.argv[1]))

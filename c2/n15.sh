@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 cd `dirname $0`
-tail -n $1 hightemp.txt
+tail -n $1 popular-names.txt

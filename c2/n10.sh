@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 cd `dirname $0`
-wc -l hightemp.txt
+wc -l popular-names.txt

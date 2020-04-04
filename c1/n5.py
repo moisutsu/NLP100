@@ -1,16 +1,7 @@
-def n5_word(sequence):
-    import re
-    pattern = r"\w+"
-    results = re.findall(pattern, sequence)
-    return bi_gram(results)
-
-def n5_char(sequence):
-    return bi_gram(sequence.replace(" ", ""))
-
-def bi_gram(sequence):
-    return [sequence[i] + sequence[i + 1] for i in range(len(sequence) - 1)]
+def n_gram(sequence, n):
+    return ["".join(sequence[i:i + n]) for i in range(len(sequence) - n + 1)]
 
 if __name__ == "__main__":
     sequence = "I am an NLPer"
-    print(n5_word(sequence))
-    print(n5_char(sequence))
+    print(n_gram(sequence, 2))
+    print(n_gram(sequence.split(), 3))

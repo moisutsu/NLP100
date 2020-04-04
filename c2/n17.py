@@ -1,10 +1,12 @@
 import os
-FILE_NAME = "hightemp.txt"
-absolute_path = os.path.join(os.path.dirname(__file__), FILE_NAME)
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+INPUT_FILE_NAME = "popular-names.txt"
 
 def uniq(file_name):
     with open(file_name) as f:
-        return set(line.strip().split()[0] for line in f.readlines())
+        print(*set(line.strip().split("\t")[0] for line in f.readlines()), sep="\n")
 
 if __name__ == "__main__":
-    print(uniq(absolute_path))
+    uniq(INPUT_FILE_NAME)

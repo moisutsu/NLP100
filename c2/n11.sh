@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 cd `dirname $0`
-cat hightemp.txt | tr '\t' ' '
+cat popular-names.txt | tr '\t' ' '

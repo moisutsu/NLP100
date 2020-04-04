@@ -1,5 +1,5 @@
-def n1(arg):
+def patatokakusi(arg):
     return arg[::2]
 
 if __name__ == "__main__":
-    print(n1("パタトクカシーー"))
+    print(patatokakusi("パタトクカシーー"))

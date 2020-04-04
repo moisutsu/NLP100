@@ -1,16 +1,13 @@
-def bi_gram(sequence):
-    sentence = sequence.replace(" ", "")
-    return [sentence[i] + sentence[i + 1] for i in range(len(sentence) - 1)]
+def n_gram(sequence, n):
+    return ["".join(sequence[i:i + n]) for i in range(len(sequence) - n + 1)]
 
 if __name__ == "__main__":
-    X = set(bi_gram("paraparaparadise"))
-    Y = set(bi_gram("paragraph"))
+    X = set(n_gram("paraparaparadise", 2))
+    Y = set(n_gram("paragraph", 2))
     print(f"X: {X}")
     print(f"Y: {Y}")
     print(f"X | Y: {X | Y}")
     print(f"X - Y: {X - Y}")
     print(f"X & Y: {X & Y}")
-    if "se" in X:
-        print('"se" in X')
-    if "se" in Y:
-        print('"se" in Y')
+    "se" in X and print('"se" in X')
+    "se" in Y and print('"se" in Y')

@@ -1,10 +1,12 @@
 import os
-FILE_NAME = "hightemp.txt"
-absolute_path = os.path.join(os.path.dirname(__file__), FILE_NAME)
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+INPUT_FILE_NAME = "popular-names.txt"
 
 def wc(file_name):
     with open(file_name) as f:
         return len(f.readlines())
 
 if __name__ == "__main__":
-    print(wc(absolute_path))
+    print(wc(INPUT_FILE_NAME))

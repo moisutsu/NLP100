@@ -1,8 +1,10 @@
 import os
 
-col1_absolute_path = os.path.join(os.path.dirname(__file__), "col1.txt")
-col2_absolute_path = os.path.join(os.path.dirname(__file__), "col2.txt")
-merge_absolute_path = os.path.join(os.path.dirname(__file__), "merge.txt")
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+INPUT_FILE_NAME_1 = "cut1.txt"
+INPUT_FILE_NAME_2 = "cut2.txt"
+OUTPUT_FILE_NAME = "merge.txt"
 
 def paste(file_name_1, file_name_2):
     col1, col2 = [], []
@@ -10,8 +12,8 @@ def paste(file_name_1, file_name_2):
         col1.extend([line.strip() for line in f.readlines()])
     with open(file_name_2) as f:
         col2.extend([line.strip() for line in f.readlines()])
-    with open(merge_absolute_path, mode="w") as f:
+    with open(OUTPUT_FILE_NAME, mode="w") as f:
         f.write("\n".join(f"{cell1}\t{cell2}" for cell1, cell2 in zip(col1, col2)))
 
 if __name__ == "__main__":
-    paste(col1_absolute_path, col2_absolute_path)
+    paste(INPUT_FILE_NAME_1, INPUT_FILE_NAME_2)

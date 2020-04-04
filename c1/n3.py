@@ -1,4 +1,4 @@
-def n3(sentence):
+def pi(sentence):
     import re
     pattern = r"\w+"
     results = re.findall(pattern, sentence)
@@ -6,4 +6,4 @@ def n3(sentence):
 
 if __name__ == "__main__":
     sentence = "Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics."
-    print(n3(sentence))
+    print(pi(sentence))

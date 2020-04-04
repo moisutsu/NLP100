@@ -1,6 +1,9 @@
 import os
-FILE_NAME = "hightemp.txt"
-absolute_path = os.path.join(os.path.dirname(__file__), FILE_NAME)
+import sys
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+INPUT_FILE_NAME = "popular-names.txt"
 
 def head(file_name, N):
     with open(file_name) as f:
@@ -8,5 +11,4 @@ def head(file_name, N):
         print("".join(lines[:N - len(lines)]))
 
 if __name__ == "__main__":
-    N = int(input("N: "))
-    head(absolute_path, N)
+    head(INPUT_FILE_NAME, int(sys.argv[1]))
