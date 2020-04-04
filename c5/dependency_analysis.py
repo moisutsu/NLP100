@@ -13,4 +13,4 @@ c = CaboCha.Parser()
 with open(os.path.join(CURRENT_DIR_NAME, OUTPUT_FILE_NAME), mode="w", encoding="utf-8") as f:
     for sentence in sentences:
         tree = c.parse(sentence)
-        f.write(tree.toString(CaboCha.FORMAT_LATTICE).replace("EOS", ""))
+        f.write(tree.toString(CaboCha.FORMAT_LATTICE))

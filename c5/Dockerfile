@@ -48,5 +48,8 @@ RUN curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${FILE_
     python3 setup.py install && \
     ldconfig
 
-# エイリアスを追加
-RUN echo "alias python=python3" > ~/.bashrc
+# Ubuntuの日本語化
+RUN apt-get install language-pack-ja-base language-pack-ja && \
+    locale-gen ja_JP.UTF-8 && \
+    echo export LANG=ja_JP.UTF-8 >> ~/.profile && \
+    source ~/.profile
