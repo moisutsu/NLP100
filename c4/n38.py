@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from n30 import load_mecab_text
 
-def n38():
+def plot_histogram_frequency_of_morphemes():
     morphemes = load_mecab_text()
     frequency_of_morphemes = {}
     for morpheme in morphemes:
@@ -17,4 +17,4 @@ def n38():
     fig.savefig("n38.png")
 
 if __name__ == "__main__":
-    n38()
+    plot_histogram_frequency_of_morphemes()

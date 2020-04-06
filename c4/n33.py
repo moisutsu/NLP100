@@ -1,8 +1,8 @@
 from n30 import load_mecab_text
 
-def n33():
+def extract_nouns_a_no_b():
     morphemes = load_mecab_text()
-    return [morpheme["base"] for morpheme in morphemes if morpheme["pos"] == "名詞" and morpheme["pos1"] == "サ変接続"]
+    return [f"{morphemes[i]['surface']}の{morphemes[i + 2]['surface']}" for i in range(len(morphemes) - 2) if morphemes[i]["pos"] == "名詞" and morphemes[i + 1]["surface"] == "の" and morphemes[i + 2]["pos"] == "名詞"]
 
 if __name__ == "__main__":
-    print(*n33(), sep=" ")
+    print(*extract_nouns_a_no_b(), sep=" ")

@@ -1,17 +1,11 @@
 from n30 import load_mecab_text
 
-def n35():
+def sorted_frequency_of_morphemes():
     morphemes = load_mecab_text()
-    longest_nouns = []
-    joined_noun = ""
+    frequency_of_morphemes = {}
     for morpheme in morphemes:
-        if morpheme["pos"] == "名詞":
-            joined_noun += morpheme["surface"]
-        elif joined_noun != "":
-            longest_nouns.append(joined_noun)
-            joined_noun = ""
-    return longest_nouns
-
+        frequency_of_morphemes[morpheme["base"]] = frequency_of_morphemes.setdefault(morpheme["base"], 0) + 1
+    return [(line[0], line[1]) for line in sorted(frequency_of_morphemes.items(), key=lambda x: x[1], reverse=True)]
 
 if __name__ == "__main__":
-    print(*n35(), sep=" ")
+    [print(f"{line[0]} : {line[1]}") for line in sorted_frequency_of_morphemes()]

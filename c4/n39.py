@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from n30 import load_mecab_text
 import math
 
-def n39():
+def plot_zipfs_law():
     morphemes = load_mecab_text()
     frequency_of_morphemes = {}
     for morpheme in morphemes:
@@ -15,9 +15,9 @@ def n39():
     fig, ax = plt.subplots()
     ax.plot(x, y)
     ax.set_title("両対数グラフ")
-    ax.set_xlabel("単語の出現頻度順位")
-    ax.set_ylabel("出現頻度")
+    ax.set_xlabel("単語の出現頻度順位(log10)")
+    ax.set_ylabel("出現頻度(log10)")
     fig.savefig("n39.png")
 
 if __name__ == "__main__":
-    n39()
+    plot_zipfs_law()
