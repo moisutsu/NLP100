@@ -1,0 +1,21 @@
+{
+	"name": "Remote-Container Python",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+		"./docker-compose.extend.yml"
+	],
+
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"python.pythonPath": "/usr/bin/python3",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.linting.pylintPath": "/usr/local/bin/pylint"
+    },
+    "service": "app",
+	"extensions": [
+		"ms-python.python"
+    ],
+    "workspaceFolder": "/work",
+    "shutdownAction": "stopCompose"
+}

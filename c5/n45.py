@@ -1,6 +1,5 @@
 import os
 from n41 import load_nekocabocha_chunk
-from n42 import chunk2str
 from n43 import chunk_include_pos
 
 OUTPUT_FILE_NAME = "verb_case_patterns.txt"
@@ -15,10 +14,10 @@ def extract_verb_case_patterns():
                     continue
                 if not chunk_include_pos(chunk, "動詞"):
                     continue
-                if not chunk_include_pos(chunks[chunk.dst], "助詞"):
+                if not any([chunk_include_pos(chunks[i], "助詞") for i in chunk.srcs]):
                     continue
                 verb = extract_morph_from_chunk_by_pos(chunk, "動詞").base
-                particles = " ".join([morph.base for morph in chunks[chunk.dst].morphs if morph.pos == "助詞"])
+                particles = " ".join(morph.base for src_i in chunk.srcs for morph in chunks[src_i].morphs if morph.pos == "助詞")
                 f.write(f"{verb}\t{particles}\n")
 
 # 1番左を抽出
