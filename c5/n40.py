@@ -3,6 +3,8 @@ import os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
+FILE_NAME = "neko.txt.cabocha"
+
 @dataclass(frozen=True)
 class Morph:
     surface: str
@@ -12,7 +14,7 @@ class Morph:
 
 def load_nekocabocha_sentences():
     file_text = ""
-    with open("neko.txt.cabocha") as f:
+    with open(FILE_NAME) as f:
         file_text = f.read().replace("EOS", "EOS\n")
 
     # ファイルを空行で区切り(1文章ごと)、リストにして返す

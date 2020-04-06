@@ -42,4 +42,4 @@ def load_nekocabocha_chunk():
 
 
 if __name__ == "__main__":
-    print(*list(load_nekocabocha_chunk())[7], sep="\n\n")
+    print(*list(load_nekocabocha_chunk())[7], sep="\n")

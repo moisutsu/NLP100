@@ -3,11 +3,11 @@ from n41 import load_nekocabocha_chunk
 from n42 import chunk2str
 from n43 import chunk_include_pos
 
-OUTPUT_FILE_NAME = "verb_case_pattern.txt"
+OUTPUT_FILE_NAME = "verb_case_patterns.txt"
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-def extract_verb_case_pattern():
+def extract_verb_case_patterns():
     with open(OUTPUT_FILE_NAME, mode="w") as f:
         for chunks in load_nekocabocha_chunk():
             for chunk in chunks:
@@ -29,4 +29,4 @@ def extract_morph_from_chunk_by_pos(chank, pos):
     return None
 
 if __name__ == "__main__":
-    extract_verb_case_pattern()
+    extract_verb_case_patterns()
