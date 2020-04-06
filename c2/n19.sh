@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 cd `dirname $0`
-LC_ALL=C sort -n hightemp.txt | uniq -w 5 -c | sort -nr
+LC_ALL=C sort -n popular-names.txt | uniq -w 5 -c | sort -nr

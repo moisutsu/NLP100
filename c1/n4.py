@@ -1,4 +1,4 @@
-def element_symbol(sentence, indexs):
+def element_symbol(sentence: str, indexs: str) -> dict:
     import re
     pattern = r"\w+"
     results = re.findall(pattern, sentence)

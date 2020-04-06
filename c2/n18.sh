@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 cd `dirname $0`
-sort -r -k 3 hightemp.txt
+sort -r -t "	" -k 3 -n popular-names.txt

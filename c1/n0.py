@@ -1,4 +1,4 @@
-def reverse_string(arg):
+def reverse_string(arg: str) -> str:
     return arg[::-1]
 
 if __name__ == "__main__":

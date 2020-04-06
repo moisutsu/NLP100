@@ -5,7 +5,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 INPUT_FILE_NAME = "popular-names.txt"
 
-def split(file_name, N):
+def split(file_name: str, N: int) -> None:
     file_contents = []
     with open(file_name) as f:
         lines = [line.strip() for line in f.readlines()]

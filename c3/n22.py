@@ -1,10 +1,10 @@
-from n20 import load_england_text
+from n21 import load_england_category
 import re
 
-def n22():
-    text = load_england_text()
-    pattern = r"^\[\[Category:(.+)]]$"
+def extract_category_names(text) -> list:
+    pattern = r"^([^|\n]+)(?:\|.+)?$"
     return re.findall(pattern, text, re.MULTILINE)
 
 if __name__ == "__main__":
-    print(*n22(), sep="\n")
+    text = "\n".join(load_england_category())
+    print(*extract_category_names(text), sep="\n")

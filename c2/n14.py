@@ -5,7 +5,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 INPUT_FILE_NAME = "popular-names.txt"
 
-def head(file_name, N):
+def head(file_name: str, N: int) -> None:
     with open(file_name) as f:
         lines = f.readlines()
         print("".join(lines[:N - len(lines)]))

@@ -1,11 +1,12 @@
 import json
 import os
 
-FILE_NAME = "jawiki-country.json"
-absolute_path = os.path.join(os.path.dirname(__file__), FILE_NAME)
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-def load_england_text():
-    with open(absolute_path) as f:
+INPUT_FILE_NAME = "jawiki-country.json"
+
+def load_england_text() -> str:
+    with open(INPUT_FILE_NAME) as f:
         lines = f.readlines()
         for line in lines:
             json_body = json.loads(line)

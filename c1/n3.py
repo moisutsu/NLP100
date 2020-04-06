@@ -1,4 +1,4 @@
-def pi(sentence):
+def pi(sentence: str) -> list:
     import re
     pattern = r"\w+"
     results = re.findall(pattern, sentence)

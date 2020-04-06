@@ -1,10 +1,10 @@
 from n20 import load_england_text
 import re
 
-def n24():
-    text = load_england_text()
-    pattern = r"^.*File:([^|]*)\|.*$"
-    return re.findall(pattern, text, re.MULTILINE)
+def extract_file_references(text: str) -> list:
+    pattern = r"ファイル:([^|\]]+)(?:\||\])"
+    return re.findall(pattern, text)
 
 if __name__ == "__main__":
-    print(*n24(), sep="\n")
+    text = load_england_text()
+    print(*extract_file_references(text), sep="\n")

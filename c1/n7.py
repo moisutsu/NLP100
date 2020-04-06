@@ -1,4 +1,4 @@
-def template(x, y, z):
+def template(x, y, z) -> str:
     return f"{x}時の{y}は{z}"
 
 if __name__ == "__main__":

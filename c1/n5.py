@@ -1,4 +1,4 @@
-def n_gram(sequence, n):
+def n_gram(sequence, n: int) -> list:
     return ["".join(sequence[i:i + n]) for i in range(len(sequence) - n + 1)]
 
 if __name__ == "__main__":

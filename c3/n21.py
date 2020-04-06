@@ -1,10 +1,17 @@
-from n20 import load_england_text
-import re
+import json
+import os
 
-def n21():
-    text = load_england_text()
-    pattern = r"^.*Category.*$"
-    return re.findall(pattern, text, re.MULTILINE)
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+INPUT_FILE_NAME = "jawiki-country.json"
+
+def load_england_category() -> list:
+    with open(INPUT_FILE_NAME) as f:
+        lines = f.readlines()
+        for line in lines:
+            json_body = json.loads(line)
+            if json_body["title"] == "イギリス":
+                return json_body["category"]
 
 if __name__ == "__main__":
-    print(*n21(), sep="\n")
+    print(*load_england_category(), sep="\n")

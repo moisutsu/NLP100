@@ -4,7 +4,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 INPUT_FILE_NAME = "popular-names.txt"
 
-def tr(file_name):
+def tr(file_name: str) -> str:
     with open(file_name) as f:
         return f.read().replace("\t", " ")
 

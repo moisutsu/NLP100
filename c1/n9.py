@@ -1,4 +1,4 @@
-def typoglycemia(sentence):
+def typoglycemia(sentence: str) -> str:
     import random
     return " ".join(f"{word[0]}{''.join(random.sample(word[1:-1], k=len(word) - 2))}{word[-1]}" if len(word) > 4 else word for word in sentence.split())
 
