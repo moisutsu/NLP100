@@ -16,6 +16,6 @@
 	"extensions": [
 		"ms-python.python"
     ],
-    "workspaceFolder": "/work",
+    "workspaceFolder": "/root",
     "shutdownAction": "stopCompose"
 }
