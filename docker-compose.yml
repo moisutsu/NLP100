@@ -1,7 +1,7 @@
 version: "3"
 services:
     app:
-        image: jun552313/python-nlp100
+        image: moisutsu/python-nlp100
         tty: true
         volumes:
             - ./:/root:cached
