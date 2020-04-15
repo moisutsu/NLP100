@@ -11,3 +11,5 @@
 .gitconfig
 .ssh
 .pylint.d
+*.ipynb_checkpoints
+*.ipynb
